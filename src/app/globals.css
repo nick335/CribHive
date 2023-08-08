@@ -1,0 +1,27 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+*{
+  margin:0;
+  padding:0;
+  box-sizing: border-box;
+}
+body{
+  background: #F9F2E6;
+}
+@font-face {
+  font-family: "Microsoft-JhengHei";
+  src: url('../../public/fonts/Microsoft JhengHei/Microsoft JhengHei.ttf')
+}
+
+
+@layer components{
+  .btnPrimary{
+  @apply bg-btnPrimary text-textSecondary ease-in duration-100 transition-all hover:bg-btnhover hover:text-headerPrimary;
+  }
+  .btnSecondary{
+  @apply bg-transparent border border-primaryBorder text-textSecondary;
+  }
+}
+

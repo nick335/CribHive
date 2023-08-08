@@ -1,0 +1,12 @@
+.logo{
+@apply relative h-10 w-[11.75rem] 
+}
+.contactIcon{
+@apply relative h-5 w-5;
+}
+.contactDiv{
+@apply flex items-center gap-x-3;
+}
+.contactInfo{
+@apply text-base;
+}
