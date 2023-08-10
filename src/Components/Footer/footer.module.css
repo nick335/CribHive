@@ -1,5 +1,5 @@
 .logo{
-@apply relative h-10 w-[11.75rem] 
+@apply relative h-10 w-[11.75rem];
 }
 .contactIcon{
 @apply relative h-5 w-5;
@@ -9,4 +9,10 @@
 }
 .contactInfo{
 @apply text-base;
+}
+.socialIcons {
+ @apply w-6 h-6 text-textSecondary
+}
+.input{
+ @apply w-full mb-5 px-5 py-2.5  bg-bgLight rounded-lg outline-none text-black placeholder-black;
 }

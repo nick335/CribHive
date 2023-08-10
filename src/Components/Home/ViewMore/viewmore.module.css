@@ -1,0 +1,6 @@
+.apartmentImgSize{
+@apply  relative w-[15.5625rem] h-52 lg:w-full;
+}
+.apartmentAddon{
+@apply rounded-t-lg;
+}

@@ -5,7 +5,7 @@ import styles from './header.module.css'
 import { useStore } from '@/store/useMenuBar'
 import arrow from '../../../public/images/utility/arrow.svg'
 import ResponsiveImage from '../Utility/ResponsiveImage'
-
+import { motion } from 'framer-motion'
 const MenuLists = () => {
  const isOpen = useStore((state) => state.isOpen)
  const [dropdown, setDropDown] = useState(false)
@@ -15,7 +15,7 @@ const MenuLists = () => {
  }
 
   return (
-   <div className={`absolute lg:static  lg:bg-transparent left-0 bg-bgPrimary w-full h-fit top-[52px] lg:w-fit  font-jhengHei ${isOpen ? 'block' : 'hidden lg:block'} lg:block`}>
+   <div className={`absolute lg:static  lg:bg-transparent left-0 bg-bgPrimary w-full h-fit top-[52px] lg:w-fit  font-jhengHei ${isOpen ? 'block' : 'hidden lg:block'} lg:block z-50`}>
     <ul className='w-[86%] mx-auto py-2.5 lg:py-0 lg:w-fit lg:flex lg:mx-0 lg:gap-x-5 xl:gap-x-11 '>
      <li className={`${styles.li} justify-between`}>
       Add A Property
@@ -28,10 +28,43 @@ const MenuLists = () => {
        />
       </div>
      </li>
-     <ul className='pl-9 lg:hidden'>
-      <li className={`${styles.li} origin-center  ${dropdown ? 'animate-appear' : ' animate-disappear animation-delay-200'}`}>Login</li>
-      <li className={`${styles.li} origin-center opacity-0  ${dropdown ? 'animate-appear animation-delay-300' : 'animate-disappear'}`}>Register</li>
-     </ul>
+     <motion.ul 
+      initial={false}
+      animate = {
+        dropdown ? {
+          height: 'auto',
+          opacity: 1,
+          display: "block",
+          transition: {
+            height: {
+              duration: 0.4
+            },
+            opacity: {
+              duration: 0.25,
+              delay: 0.15
+            }
+          }
+        } : {
+          height: 0,
+          opacity: 0,
+          transition: {
+            height: {
+              duration: 0.4,
+            },
+            opacity: {
+              duration: 0.25
+            }
+          },
+          transitionEnd: {
+            display: 'none'
+          }
+        }
+      }
+     className='pl-9 lg:hidden'
+     >
+      <li className={`${styles.li} origin-center `}>Login</li>
+      <li className={`${styles.li} origin-center`}>Register</li>
+     </motion.ul>
      <li className={`${styles.li}`}>
       <Link href={'/'}>
        Our Apartments

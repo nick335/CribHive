@@ -1,0 +1,24 @@
+.active{
+ @apply underline underline-offset-4 decoration-primaryBorder text-textSecondary lg:underline-offset-8;
+}
+.fadeEnter{
+ @apply opacity-0 transition-opacity duration-300;
+}
+.fadeEnterActive{
+@apply opacity-100 transition-opacity duration-300;
+}
+.fadeExit {
+ @apply opacity-100 transition-opacity duration-300;
+}
+.fadeExitActive {
+ @apply opacity-0 transition-opacity duration-300;
+}
+.transition{
+ @apply transition-opacity duration-300;
+}
+.disclosureControl{
+ @apply w-4 h-2.5 transition-all duration-500 ease-in-out;
+}
+.arrowRotate{
+ @apply -rotate-180;
+ }

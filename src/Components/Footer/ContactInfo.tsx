@@ -14,7 +14,7 @@ const ContactInfo = () => {
       style={styles.logo}
       addons=''
      />
-     <p className='pt-3 max-w-[228px] text-sm text-textSecondary'>The very best accomodation service is one click away</p>
+     <p className='pt-3 max-w-[228px] text-sm text-textSecondary lg:text-base'>The very best accomodation service is one click away</p>
      <div className={`${styles.contactDiv} mb-3 mt-5`}>
       <ResponsiveImage 
        url={mail}
