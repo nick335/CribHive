@@ -1,0 +1,12 @@
+.active{
+ @apply underline underline-offset-4 decoration-primaryBorder text-textSecondary lg:underline-offset-8;
+}
+.image{
+ @apply relative w-[12.375rem] h-[8.25rem] mx-auto;
+}
+.controlBox{
+@apply w-6 h-6 bg-bgSecondary flex justify-center items-center text-white text-xs font-bold rounded-full cursor-pointer relative; 
+}
+.controlBoxActive{
+ @apply bg-btnhover text-headerPrimary;
+}

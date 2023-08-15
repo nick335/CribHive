@@ -17,7 +17,7 @@ const HotDealsComponent = () => {
         <p className='mt-2 text-sm'>Kolawole Street, Off seven avenue, Akoka</p>
         <div className='flex items-center justify-between mt-2 text-sm'>
           <h5>Status: For Rent</h5>
-          <h6>$150,000</h6>
+          <h6 className='text-xs'>$150,000</h6>
         </div>
       </div>
     </div>
