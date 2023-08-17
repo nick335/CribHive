@@ -20,7 +20,8 @@ module.exports = {
         primaryBorder: '#E0BC84',
         btnPrimary: '#201B18',
         btnSecondary: '#F9F2E6',
-        btnhover: '#E0BC84'
+        btnhover: '#E0BC84',
+        error: '#EB5757',
       },
       fontFamily: {
         jhengHei: ["Microsoft-JhengHei", "sans-serif"],
@@ -53,6 +54,7 @@ module.exports = {
         'overflowdiv': '4px 4px 35.5px 0px rgba(224, 188, 132, 0.10)',
         'boxContent': '0px 3.77px 3.77px 0px rgba(32, 27, 24, 0.30)',
         'box' : '0px 8px 12px 0px rgba(32, 27, 24, 0.30)',
+        'apartmentBox': '0px 4.53px 4.53px 0px rgba(32, 27, 24, 0.30)' 
       }
     },
   },

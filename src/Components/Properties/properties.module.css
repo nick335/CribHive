@@ -1,0 +1,15 @@
+.input{
+ @apply w-full h-11 bg-transparent border border-black outline-none text-headerPrimary placeholder-headerPrimary rounded-lg pl-4 focus:border-primaryBorder transition-all ease-in duration-200 lg:bg-bgPrimary;
+}
+.apartmentImgSize{
+ @apply  relative w-full h-[15.5rem] lg:w-full;
+ }
+ .apartmentAddon{
+ @apply rounded-t-lg;
+ }
+.hostelImgSize{
+ @apply  relative w-full h-[16.6875rem] lg:w-full lg:h-[15.3125rem];
+ }
+ .hostelAddon{
+ @apply rounded-t-lg;
+ }

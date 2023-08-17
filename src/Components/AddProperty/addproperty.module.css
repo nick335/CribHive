@@ -1,0 +1,21 @@
+.btnDiv{
+ @apply outline-none w-2/4 bg-transparent flex justify-center items-center h-12 border rounded-lg gap-x-2.5 cursor-pointer;
+}
+.btnDivDefault{
+ @apply text-headerPrimary border-black transition-all ease-in duration-75;
+}
+.btnDivActive{
+ @apply text-headerSecondary border-primaryBorder transition-all ease-in duration-75;
+}
+.icon{
+ @apply w-4 h-4;
+}
+.input{
+ @apply w-full h-12 bg-transparent border border-black outline-none text-headerPrimary placeholder-headerPrimary rounded-lg pl-4;
+}
+.inputGap{
+ @apply mt-6;
+}
+.formBtn{
+ @apply w-full h-12 rounded-lg font-jhengHei font-bold;
+}

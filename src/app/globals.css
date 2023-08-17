@@ -24,5 +24,8 @@ body{
   .btnSecondary{
   @apply bg-transparent border border-primaryBorder text-textSecondary;
   }
+  .error{
+    @apply absolute w-4 h-4 top-2/4 -translate-y-2/4 right-3;
+  }
 }
 

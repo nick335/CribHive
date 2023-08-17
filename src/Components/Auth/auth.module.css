@@ -1,0 +1,18 @@
+.form{
+ @apply mt-8;
+}
+.input{
+ @apply w-full h-12 bg-transparent border border-black outline-none text-headerPrimary placeholder-headerPrimary rounded-lg pl-4 focus:border-primaryBorder transition-all ease-in duration-200;
+}
+.inputGap{
+ @apply mt-6;
+}
+.formBtn{
+ @apply w-full h-12 rounded-lg font-jhengHei font-bold;
+}
+.icon{
+ @apply relative w-4 h-4;
+}
+.otherSignInOptionsBtn{
+ @apply w-full h-12 flex items-center justify-center gap-x-6 border border-black rounded-lg font-bold cursor-pointer;
+}
