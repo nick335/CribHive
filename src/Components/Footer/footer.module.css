@@ -14,5 +14,5 @@
  @apply w-6 h-6 text-textSecondary
 }
 .input{
- @apply w-full mb-5 px-5 py-2.5  bg-bgLight rounded-lg outline-none text-black placeholder-black;
+ @apply w-full px-5 py-2.5  bg-bgLight rounded-lg outline-none text-black placeholder-black;
 }

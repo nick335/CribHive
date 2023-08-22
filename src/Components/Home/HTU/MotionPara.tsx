@@ -21,7 +21,7 @@ const variants = {
 
 const MotionPara = ({content}: props) => {
   return (
-    <motion.p 
+    <motion.div 
      className='max-w-[10.9375rem] mx-auto font-jhengHei text-sm text-textPrimary text-center'
      variants={variants}
      initial='enter'
@@ -31,7 +31,7 @@ const MotionPara = ({content}: props) => {
      }}
     >
      { content}
-    </motion.p>
+    </motion.div>
   )
 }
 

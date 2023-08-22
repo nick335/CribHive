@@ -13,11 +13,11 @@ const MotionImage = ({url} : props) => {
 const variants  = {
  enter:{
   opacity:0,
-  // display: 'none'
+  display: 'none'
  },
  center: {
   opacity: 1,
-  // display: 'block'
+  display: 'block'
  },
  exit: {
   opacity: 0
@@ -26,7 +26,7 @@ const variants  = {
 
   return (
    <motion.div 
-    className='w-fit mx-auto'
+    className='w-fit mx-auto md:mx-0 md:w-full md:min-w-[100%] bg-slate-500 md:max-w-[100%]'
     variants={variants}
     initial="enter"
     animate="center"

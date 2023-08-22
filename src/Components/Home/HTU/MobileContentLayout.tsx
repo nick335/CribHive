@@ -1,9 +1,9 @@
 import { AnimatePresence } from 'framer-motion'
-import React, { useState } from 'react'
+import React, {   useEffect, useRef, useState } from 'react'
 import styles from './howtouse.module.css'
-import MotionPara from './MotionPara'
 import data from './Data'
 import DashedLine from './DashedLine'
+import { SwitchTransition, CSSTransition } from 'react-transition-group'
 
 interface props{
  agentContentDisplay: boolean,
@@ -11,44 +11,69 @@ interface props{
 
 const MobileContentLayout = ({agentContentDisplay} : props) => {
 const [indexDisplay, setIndexDisplay] = useState(0)
+const nodeRef = useRef<any>(null)
+const delay = 4000
 // user steps data
-const userSteps = data.userSteps
-// agents steps data
-const agentsSteps = data.agentSteps
+const Steps = data
 
-// function AutoChangeIndex(){
-//  // if(indexDisplay === 2){
-//  //  setIndexDisplay(0) }
-//  // // }else{
-//  // //  setIndexDisplay(index => index + 1)
-//  // // }
-//  console.log(indexDisplay)
-// }
 
-// setInterval(AutoChangeIndex, 5000);
+
 
 function setIndex(idx: number){
- setIndexDisplay(idx)
+  if(!agentContentDisplay){
+    setIndexDisplay(idx)
+  }else{
+    let newidx = idx + 3
+    setIndexDisplay(newidx)
+  }
 }
+ useEffect(() => {
+  setIndex(0)
+}, [agentContentDisplay])
+  useEffect(() => {
+   const timeout = setTimeout(
+      () => {
+        if(!agentContentDisplay){
+          setIndexDisplay((prevIndex) => prevIndex === 2 ? 0 : prevIndex + 1 )
+        }else {
+          setIndexDisplay((prevIndex) => prevIndex === 5 ? 3 : prevIndex + 1)
+        }
+      }, delay
+    )
+    return () => clearTimeout(timeout)
+  }, [indexDisplay])
 
   return (
-    <div className='mx-auto max-w-[15.375rem]' >
-
-     <div className='flex justify-between items-center my-[1.4375rem]'>
-      <div onClick={() => setIndex(0)} className={`${styles.controlBoxActive} ${styles.controlBox}`}>1 <DashedLine /></div>
-      <div onClick={() => setIndex(1)} className={`${styles.controlBox}`}>2 <DashedLine /></div>
-      <div onClick={() => setIndex(2)} className={`${styles.controlBox}`}>3</div>
+    <div className='mx-auto max-w-[15.375rem] md:hidden' >
+     <div className='flex justify-between items-center mb-[1.4375rem] mt-[4.19rem]'>
+      <div onClick={() => setIndex(0)} className={`${ indexDisplay === 0 || indexDisplay === 3 ? styles.controlBoxActive : '' } ${styles.controlBox}`}>1 <DashedLine /></div>
+      <div onClick={() => setIndex(1)} className={` ${ indexDisplay === 1 || indexDisplay === 4 ? styles.controlBoxActive : '' } ${styles.controlBox}`}>2 <DashedLine /></div>
+      <div onClick={() => setIndex(2)} className={`${ indexDisplay === 2 || indexDisplay === 5 ? styles.controlBoxActive : '' } ${styles.controlBox}`}>3</div>
      </div>
 
      <div className='w-full min-h-[2.38rem]  max-h-[2.38rem] flex justify-center mx-auto '>
-      <AnimatePresence initial={false} >
-       { !agentContentDisplay && indexDisplay === 0 && <MotionPara key={0} content={userSteps[0]} /> }
-       { !agentContentDisplay && indexDisplay === 1 && <MotionPara key={1} content={userSteps[1]} /> }
-       { !agentContentDisplay && indexDisplay === 2 && <MotionPara key={2} content={userSteps[2]} /> }
-       { agentContentDisplay && indexDisplay === 0 && <MotionPara key={3} content={agentsSteps[0]} /> }
-       { agentContentDisplay && indexDisplay === 1 && <MotionPara key={4} content={agentsSteps[1]} /> }
-       { agentContentDisplay && indexDisplay === 2 && <MotionPara key={5} content={agentsSteps[2]} /> }
-      </AnimatePresence>
+      <SwitchTransition mode='out-in' >
+        <CSSTransition 
+          nodeRef={nodeRef}
+          addEndListener={(done: () => void) => {
+            nodeRef.current?.addEventListener("transitionend", done, false)
+          }}
+          key={indexDisplay}
+          classNames={{
+            appear: styles.fadeEnter,
+            appearActive: styles.fadeEnterActive,
+            exit: styles.fadeExit,
+            exitActive: styles.fadeExitActive
+          }}
+        >
+          <div ref={nodeRef}>
+            <p className='max-w-[10.9375rem] mx-auto font-jhengHei text-sm text-textPrimary text-center'>
+              {Steps[indexDisplay]}
+            </p>
+          </div>
+          
+        </CSSTransition>
+      </SwitchTransition>
      </div>
      
     </div>

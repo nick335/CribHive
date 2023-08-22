@@ -62,8 +62,16 @@ const MenuLists = () => {
       }
      className='pl-9 lg:hidden'
      >
-      <li className={`${styles.li} origin-center `}>Login</li>
-      <li className={`${styles.li} origin-center`}>Register</li>
+      <li className={`${styles.li} origin-center `}>
+        <Link href='/login' >
+          Login
+        </Link>
+      </li>
+      <li className={`${styles.li} origin-center`}>
+        <Link href='/register' >
+         Register
+        </Link>
+      </li>
      </motion.ul>
      <li className={`${styles.li}`}>
       <Link href={'/'}>
