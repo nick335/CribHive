@@ -2,10 +2,10 @@
  @apply underline underline-offset-4 decoration-primaryBorder text-textSecondary lg:underline-offset-8;
 }
 .image{
- @apply relative w-[12.375rem] h-[8.25rem] mx-auto md:w-full md:h-[20rem];
+ @apply relative w-[12.375rem] h-[8.25rem] mx-auto md:w-full md:h-[20rem] lg:h-[23rem] xl:h-[28rem];
 }
 .controlBox{
-@apply w-6 h-6 bg-bgSecondary flex justify-center items-center text-white text-xs font-bold rounded-full cursor-pointer relative transition-all ease-in duration-100; 
+@apply w-6 h-6 bg-bgSecondary flex justify-center items-center text-white text-xs font-bold rounded-full cursor-pointer relative transition-all ease-in duration-100 md:mx-auto md:mb-3 lg:w-8 lg:h-8 lg:text-base; 
 }
 .controlBoxActive{
  @apply bg-btnhover text-headerPrimary transition-all ease-in duration-100;
@@ -24,4 +24,7 @@
 }
 .transition{
  @apply transition-opacity duration-300;
+}
+.contentDiv{
+ @apply max-w-[11.9375rem] w-[9rem] lg:w-[10rem] items-stretch min-h-[6.125rem]  flex-col justify-center text-center text-sm lg:text-base;
 }
