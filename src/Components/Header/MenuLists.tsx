@@ -6,6 +6,8 @@ import { useStore } from '@/store/useMenuBar'
 import arrow from '../../../public/images/utility/arrow.svg'
 import ResponsiveImage from '../Utility/ResponsiveImage'
 import { motion } from 'framer-motion'
+import { useRouter } from 'next/router'
+
 const MenuLists = () => {
  const isOpen = useStore((state) => state.isOpen)
  const [dropdown, setDropDown] = useState(false)
@@ -73,7 +75,7 @@ const MenuLists = () => {
         </Link>
       </li>
      </motion.ul>
-     <li className={`${styles.li}`}>
+     <li className={`${styles.li}`}  >
       <Link href={'/'}>
        Our Apartments
       </Link>

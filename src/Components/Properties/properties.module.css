@@ -16,3 +16,15 @@
  .contactusDiv{
   @apply h-10 w-full flex items-center px-4 bg-bgOrange text-headerPrimary border border-secondaryBorder rounded-lg lg:w-[70%] lg:mx-auto;
  }
+ .arrowLeft{
+  @apply relative h-9 w-9 ;
+ }
+ .arrowRight{
+  @apply relative h-9 w-9 ;
+ }
+ .slidingImages{
+  @apply relative inline-block w-[100%] h-[15.75rem] sm:h-[20rem] md:h-[23rem];
+ }
+ .slidingImagesAddons{
+  @apply inline-block;
+ }

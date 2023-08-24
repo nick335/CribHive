@@ -8,8 +8,10 @@ import MotionImage from './MotionImage'
 import MobileContentLayout from './MobileContentLayout'
 import { SwitchTransition, CSSTransition } from 'react-transition-group'
 import DesktopContentLayout from './DesktopContentLayout'
+import { useStore } from '@/store/useWindowWidth'
 
 const HowToUse = () => {
+ const { windowWidth } = useStore()
  const [agentStepsDisplay, setAgentStepsDisplay] = useState(false)
  const nodeRef = useRef<any>(null)
 
@@ -59,12 +61,15 @@ const HowToUse = () => {
                 </div>
               </CSSTransition>
             </SwitchTransition>
+
+            { windowWidth <  768 ?
             <MobileContentLayout 
               agentContentDisplay={agentStepsDisplay}
-            />
+            /> :
             <DesktopContentLayout  
               agentContentDisplay = {agentStepsDisplay}
             />
+            }
             <button className='btnPrimary w-36 md:w-[8rem] h-10 rounded-lg mt-[1.4375rem] mx-auto flex items-center justify-center cursor-pointer text-sm md:absolute md:-bottom-6 md:right-0'>Get Started</button> 
           </div>        
         </div>
