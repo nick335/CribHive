@@ -59,6 +59,9 @@ module.exports = {
         'apartmentBox': '0px 4.53px 4.53px 0px rgba(32, 27, 24, 0.30)' ,
         'contactShadow': '2px 4px 17px 8px rgba(0, 0, 0, 0.25)',
         'formShadow': '8px 8px 16px 0px rgba(0,0,0,0.20), -8px -8px 16px 0px rgba(0,0,0, 0.20)',
+      },
+      screens:{
+        'mdx': '898px'
       }
     },
   },
