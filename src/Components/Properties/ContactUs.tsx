@@ -6,13 +6,13 @@ import React from 'react'
 
 const ContactUs = () => {
   return (
-    <div className='mt-8 w-full lg:w-[80%] lg:ml-auto lg:h-[17.5625rem] lg:bg-bgPrimary lg:shadow-contactShadow'>
-     <h3 className='font-bold text-headerPrimary lg:text-[2rem] lg:text-center lg:pt-6'>Contact Us</h3>
+    <div className='mt-8 w-full lg:w-[90%] lg:ml-auto lg:h-[15rem] xl:h-[17.5625rem] lg:bg-bgPrimary lg:shadow-contactShadow'>
+     <h3 className='font-bold text-headerPrimary lg:text-2xl xl:text-[2rem] lg:text-center lg:pt-6'>Contact Us</h3>
      <div className={`mt-3.5 lg:mt-[1.38rem] ${styles.contactusDiv}`}>
       <FontAwesomeIcon icon={faWhatsapp} className='w-6 h-6' />
       <h5 className='mx-auto'>WhatsApp Message</h5>
      </div>
-     <div className={`mt-4 ${styles.contactusDiv}`} >
+     <div className={`mt-4 lg:mt-6  ${styles.contactusDiv}`} >
       <FontAwesomeIcon icon={faPhone} className='w-6 h-6' />
       <h5 className='mx-auto'>Phone Call</h5>
      </div>

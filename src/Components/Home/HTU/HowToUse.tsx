@@ -1,5 +1,5 @@
 'use client'
-import React, { useState, useRef } from 'react'
+import React, { useState, useRef, useEffect } from 'react'
 import styles from './howtouse.module.css'
 import { AnimatePresence } from 'framer-motion'
 import clientImage from '../../../../public/images/home/client.png'
@@ -9,12 +9,14 @@ import MobileContentLayout from './MobileContentLayout'
 import { SwitchTransition, CSSTransition } from 'react-transition-group'
 import DesktopContentLayout from './DesktopContentLayout'
 import { useStore } from '@/store/useWindowWidth'
+import { useRouter } from 'next/navigation'
 
 const HowToUse = () => {
+ const  router = useRouter()
  const { windowWidth } = useStore()
  const [agentStepsDisplay, setAgentStepsDisplay] = useState(false)
  const nodeRef = useRef<any>(null)
-
+ const delay = 4000
  function displayAgentSteps (){
   setAgentStepsDisplay(true)
  }
@@ -22,8 +24,35 @@ const HowToUse = () => {
   setAgentStepsDisplay(false)
  }
 
+  function getStarted(){
+  // determing which steps is currently displaying
+  if(agentStepsDisplay){
+    router.push('/addaproperty')
+  }else{
+    router.push('/properties')
+  }
+ }
+
+ // Auto switching if Desktop Layout is in view
+ useEffect(() => {
+  const timeout = setTimeout(
+    () => {
+      if(windowWidth >= 768){
+        setAgentStepsDisplay((prev) => !prev)
+      }    
+    }, delay
+  )
+
+  return () => {
+    if(windowWidth >= 768){
+      clearTimeout(timeout)
+    }
+  }
+ }, [windowWidth,  agentStepsDisplay])
+
+
   return (
-    <section className=' font-jhengHei relative mt-12 md:px-6 md:bg-bgLight md:pt-12 lg:px-[5%]'>
+    <section id='HTU' className=' font-jhengHei relative mt-12 md:px-6 md:bg-bgLight md:pt-12 lg:px-[5%]'>
       <div className='flex items-center justify-center md:relative md:h-[34px] '>
         <h2 className='text-center font-bold text-lg text-headerPrimary md:text-xl lg:text-3xl '>How to Use Cribhive</h2>
         <div className='absolute top-[14.12rem] left-2/4 -translate-x-2/4 z-10 w-[11.625rem] mx-auto border border-headerPrimary flex px-3.5 text-xs items-center text-center rounded md:mx-0 md:ml-auto lg:text-lg lg:w-[18.5rem] lg:px-6  md:top-0 md:right-0 md:translate-x-0'>
@@ -70,7 +99,7 @@ const HowToUse = () => {
               agentContentDisplay = {agentStepsDisplay}
             />
             }
-            <button className='btnPrimary w-36 md:w-[8rem] h-10 rounded-lg mt-[1.4375rem] mx-auto flex items-center justify-center cursor-pointer text-sm md:absolute md:-bottom-6 md:right-0'>Get Started</button> 
+            <button className='btnPrimary w-36 md:w-[8rem] h-10 rounded-lg mt-[1.4375rem] mx-auto flex items-center justify-center cursor-pointer text-sm md:absolute md:-bottom-6 md:right-0' onClick={getStarted}>Get Started</button> 
           </div>        
         </div>
       </div>

@@ -14,7 +14,7 @@
  @apply rounded-t-lg;
  }
  .contactusDiv{
-  @apply h-10 w-full flex items-center px-4 bg-bgOrange text-headerPrimary border border-secondaryBorder rounded-lg lg:w-[70%] lg:mx-auto;
+  @apply h-10 w-full flex items-center px-4 bg-bgOrange text-headerPrimary border border-secondaryBorder rounded-lg lg:w-[80%] lg:mx-auto cursor-pointer;
  }
  .arrowLeft{
   @apply relative h-9 w-9 ;

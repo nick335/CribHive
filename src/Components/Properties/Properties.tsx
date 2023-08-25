@@ -1,9 +1,8 @@
 import React from 'react'
 import styles from './properties.module.css'
-import ApartmentBox from './ApartmentBox'
-import HostelBox from './HostelBox'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faFilter, faMagnifyingGlass } from '@fortawesome/free-solid-svg-icons'
+import PropertyDisplayBox from './PropertyDisplayBox'
 
 const Properties = () => {
   return (
@@ -24,41 +23,41 @@ const Properties = () => {
       </h3>
      </div>
     </section>
-    <section className='mt-4 lg:mt-6'>
+    <section className='mt-4 lg:mt-6 w-fit'>
      <h3 className='font-bold font-jhengHei text-headerPrimary lg:text-2xl'>Apartments</h3>
-     <div className='mt-3 lg:mt-[0.88rem] flex flex-wrap gap-5 justify-center  lg:justify-items-start lg:justify-between lg:gap-y-8'>
-      <ApartmentBox />
-      <ApartmentBox />
-      <ApartmentBox />
-      <ApartmentBox />
-      <ApartmentBox />
-      <ApartmentBox />
-      <ApartmentBox />
-      <ApartmentBox />
-      <ApartmentBox />
-      <ApartmentBox />
-      <ApartmentBox />
-      <ApartmentBox />
-      <ApartmentBox />
-      <ApartmentBox />
+     <div className='mt-3  lg:mt-[0.88rem] flex flex-wrap gap-5 justify-center md:justify-between  lg:justify-items-start lg:justify-between lg:gap-y-8'>
+      <PropertyDisplayBox />
+      <PropertyDisplayBox />
+      <PropertyDisplayBox />
+      <PropertyDisplayBox />
+      <PropertyDisplayBox />
+      <PropertyDisplayBox />
+      <PropertyDisplayBox />
+      <PropertyDisplayBox />
+      <PropertyDisplayBox />
+      <PropertyDisplayBox />
+      <PropertyDisplayBox />
+      <PropertyDisplayBox />
+      <PropertyDisplayBox />
+      <PropertyDisplayBox />
      </div>
     </section>
     <section className='mt-6'>
      <h3 className='font-bold font-jhengHei'>Hostels</h3>
      <div className='mt-4 flex flex-wrap gap-5 justify-center'>
-      <HostelBox />
-      <HostelBox />
-      <HostelBox />
-      <HostelBox />
-      <HostelBox />
-      <HostelBox />
-      <HostelBox />
-      <HostelBox />
-      <HostelBox />
-      <HostelBox />
-      <HostelBox />
-      <HostelBox />
-      <HostelBox />
+      <PropertyDisplayBox />
+      <PropertyDisplayBox />
+      <PropertyDisplayBox />
+      <PropertyDisplayBox />
+      <PropertyDisplayBox />
+      <PropertyDisplayBox />
+      <PropertyDisplayBox />
+      <PropertyDisplayBox />
+      <PropertyDisplayBox />
+      <PropertyDisplayBox />
+      <PropertyDisplayBox />
+      <PropertyDisplayBox />
+      <PropertyDisplayBox />
      </div>
     </section>
     </>
