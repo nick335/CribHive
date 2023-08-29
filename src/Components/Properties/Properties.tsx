@@ -3,6 +3,7 @@ import styles from './properties.module.css'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faFilter, faMagnifyingGlass } from '@fortawesome/free-solid-svg-icons'
 import PropertyDisplayBox from './PropertyDisplayBox'
+import Filter from './Filter'
 
 const Properties = () => {
   return (
@@ -44,7 +45,7 @@ const Properties = () => {
     </section>
     <section className='mt-6'>
      <h3 className='font-bold font-jhengHei'>Hostels</h3>
-     <div className='mt-4 flex flex-wrap gap-5 justify-center'>
+     <div className='mt-3  lg:mt-[0.88rem] flex flex-wrap gap-5 justify-center md:justify-between  lg:justify-items-start lg:justify-between lg:gap-y-8'>
       <PropertyDisplayBox />
       <PropertyDisplayBox />
       <PropertyDisplayBox />
@@ -60,6 +61,7 @@ const Properties = () => {
       <PropertyDisplayBox />
      </div>
     </section>
+    <Filter />
     </>
   )
 }

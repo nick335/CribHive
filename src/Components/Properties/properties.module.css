@@ -17,14 +17,50 @@
   @apply h-10 w-full flex items-center px-4 bg-bgOrange text-headerPrimary border border-secondaryBorder rounded-lg lg:w-[80%] lg:mx-auto cursor-pointer;
  }
  .arrowLeft{
-  @apply relative h-9 w-9 ;
+  @apply relative h-9 w-9;
  }
  .arrowRight{
-  @apply relative h-9 w-9 ;
+  @apply relative h-9 w-9;
  }
- .slidingImages{
+ .mobileSlidingImages{
   @apply relative inline-block w-[100%] h-[15.75rem] sm:h-[20rem] md:h-[23rem];
  }
- .slidingImagesAddons{
+ .mobileSlidingImagesAddons{
   @apply inline-block;
  }
+ .DesktopSlidingImages{
+ @apply relative min-w-[calc(50%-0.375rem)] w-[calc(50%-0.375rem)] h-[27.4375rem]
+ }
+  .filterSectionDiv{
+ @apply border-b border-darkBorder2 mt-6;
+ }
+ .filterSectionDivHeader{
+ @apply text-base font-bold font-jhengHei;
+ }
+ .btnFilterDiv{
+ @apply outline-none w-2/4 bg-transparent flex justify-center items-center h-12 border rounded-lg gap-x-2.5 cursor-pointer;
+}
+.btnFilterDivDefault{
+ @apply text-headerPrimary border-black transition-all ease-in duration-75;
+}
+.btnFilterDivActive{
+ @apply text-headerSecondary border-primaryBorder transition-all ease-in duration-75;
+}
+.icon{
+ @apply w-4 h-4;
+}
+.filterInput{
+ @apply w-full h-12 bg-transparent border border-black outline-none text-headerPrimary placeholder-headerPrimary rounded-lg pl-4 focus:border-primaryBorder transition-all ease-in duration-200;
+}
+.radioDiv{
+@apply flex gap-x-6 items-center mt-5 font-jhengHei text-base;
+}
+.FilterRadioBtn{
+@apply cursor-pointer w-[0.9375rem] h-[0.9375rem] bg-bgPrimary border border-[#4A4A4A] rounded-full;
+}
+.FilterRadioBtnDefault{
+@apply bg-bgPrimary;
+}
+.FilterRadioBtnActive{
+@apply bg-bgOrange;
+}

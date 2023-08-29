@@ -20,6 +20,7 @@ module.exports = {
         headerSecondary: '#E0BC84',
         primaryBorder: '#E0BC84',
         secondaryBorder: '#201B18',
+        darkBorder2: '#583C2B',
         btnPrimary: '#201B18',
         btnSecondary: '#F9F2E6',
         btnhover: '#E0BC84',

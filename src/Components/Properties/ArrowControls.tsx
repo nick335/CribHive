@@ -3,6 +3,7 @@ import React from 'react'
 import arrowLeft from '../../../public/images/properties/arrowLeft.svg'
 import arrowRight from '../../../public/images/properties/arrowRight.svg'
 import styles from './properties.module.css'
+import { useStore } from '@/store/useWindowWidth'
 
 interface props {
  slideRight: () => void,
@@ -13,7 +14,8 @@ interface props {
 
 
 const ArrowControls = ({slideRight, slideLeft, activeIdx, Arraylength}: props) => {
- const lastImageIdx =Arraylength -1
+ const windowWidth = useStore().windowWidth
+ const lastImageIdx = windowWidth > 1024 ? Arraylength - 2 : Arraylength - 1
   return (
     <>
     { activeIdx > 0 && <div className='w-fit h-fit absolute cursor-pointer top-2/4 -translate-y-2/4 left-6' onClick={slideLeft}>

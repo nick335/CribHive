@@ -9,7 +9,7 @@ const NavBtn = () => {
         Login
       </Link>
       </button>
-     <button className='btnPrimary h-11 w-[156px] rounded-lg'>Add a Property</button>
+     <button className='btnPrimary h-11 w-[156px] rounded-lg'><Link href='addaproperty'>Add a Property</Link></button>
     </div>
   )
 }

@@ -29,8 +29,8 @@ const MobileSlider = () => {
               key={idx}
               alt='slidingImages'
               url={each}
-              style={styles.slidingImages}
-              addons={styles.slidingImagesAddons}
+              style={styles.mobileSlidingImages}
+              addons={styles.mobileSlidingImagesAddons}
            />
   })
 
