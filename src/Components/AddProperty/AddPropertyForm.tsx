@@ -3,6 +3,8 @@ import { faHome, faHotel, faPlus } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import React, { useState } from 'react'
 import styles from './addproperty.module.css'
+import Apartment from '../Utility/icons/Apartment'
+import Hostel from '../Utility/icons/Hostel'
 
 const AddPropertyForm = () => {
  let [isApartment, setIsApartment] = useState(true)
@@ -15,14 +17,15 @@ const AddPropertyForm = () => {
  }
   return (
     <div className='mt-9'>
-     <div className='flex gap-x-3'>
+     <div className='flex gap-x-3 justify-center items-center'>
       <div className={`${styles.btnDiv} ${isApartment ? styles.btnDivActive : styles.btnDivDefault}`} onClick={setIsApartmentTrue} >
        Apartment
-       <FontAwesomeIcon className={styles.icon} icon={faHome}  />
+       <Apartment active={isApartment} />
       </div>
       <div className={`${styles.btnDiv} ${!isApartment ? styles.btnDivActive : styles.btnDivDefault} `} onClick={setIsApartmentFalse}>
        Hostel
-       <FontAwesomeIcon className={styles.icon} icon={faHotel} />
+       {/* passing the inverse of isApartment state because that represents the hostel state */}
+       <Hostel active={!isApartment} />
       </div>
      </div>
      <form>

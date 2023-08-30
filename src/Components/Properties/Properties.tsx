@@ -1,11 +1,15 @@
+'use client'
 import React from 'react'
 import styles from './properties.module.css'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faFilter, faMagnifyingGlass } from '@fortawesome/free-solid-svg-icons'
 import PropertyDisplayBox from './PropertyDisplayBox'
 import Filter from './Filter'
+import { LuFilter } from 'react-icons/lu'
+import { useStore } from '@/store/useFilter'
 
 const Properties = () => {
+  const { toggleFilter } = useStore()
   return (
     <>
     <section className=' lg:relative max-w-[620px] mx-auto lg:w-full lg:max-w-none'>
@@ -17,9 +21,9 @@ const Properties = () => {
      </div>
      <div className='mt-2 flex w-full h-11 px-4 lg:px-10 rounded-lg justify-between items-center bg-bgSecondary text-textSecondary lg:h-16 lg:max-w-[70rem]'>
       <h3>Apartments <span className='mx-2'>/</span> Hostels</h3>
-      <h3 className='flex items-center'>Filter
+      <h3 className='flex items-center cursor-pointer' onClick={toggleFilter}>Filter
        <span className='ml-2'>
-        <FontAwesomeIcon icon={faFilter} className='w-4 h-4' />
+        <LuFilter color="#E0BC84" />
        </span>
       </h3>
      </div>

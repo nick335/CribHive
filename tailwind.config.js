@@ -27,7 +27,7 @@ module.exports = {
         error: '#EB5757',
       },
       fontFamily: {
-        jhengHei: ["Microsoft-JhengHei", "sans-serif"],
+        jhengHei: ['var(--font-JhengHei)'],
         inter:   ["Inter", "sans-serif"]
       },
       keyframes: {

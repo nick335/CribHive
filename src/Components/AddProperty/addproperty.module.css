@@ -1,5 +1,5 @@
 .btnDiv{
- @apply outline-none w-2/4 bg-transparent flex justify-center items-center h-12 border rounded-lg gap-x-2.5 cursor-pointer;
+ @apply outline-none w-2/4 lg:max-w-[11.25rem] bg-transparent flex justify-center items-center h-12 border rounded-lg gap-x-2.5 cursor-pointer;
 }
 .btnDivDefault{
  @apply text-headerPrimary border-black transition-all ease-in duration-75;
@@ -11,7 +11,7 @@
  @apply w-4 h-4;
 }
 .input{
- @apply w-full h-12 bg-transparent border border-black outline-none text-headerPrimary placeholder-headerPrimary rounded-lg pl-4;
+ @apply w-full h-12 bg-transparent border border-black outline-none text-headerPrimary placeholder-headerPrimary rounded-lg pl-4 focus:border-primaryBorder transition-all ease-in duration-200;
 }
 .inputGap{
  @apply mt-6;
