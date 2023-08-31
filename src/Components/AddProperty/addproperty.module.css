@@ -19,3 +19,15 @@
 .formBtn{
  @apply w-full h-12 rounded-lg font-jhengHei font-bold;
 }
+.NotifyOverlay{
+ @apply bg-black/40  top-0 left-0  font-jhengHei flex justify-center items-center;
+}
+.notifyDiv{
+ @apply bg-bgPrimary w-[21.5652rem] px-6 py-5 border-2 rounded-xl border-primaryBorder;
+}
+.notifyPara{
+ @apply text-center text-sm font-normal;
+}
+.notifyBtn{
+ @apply w-full rounded-lg mt-4 h-9;
+}

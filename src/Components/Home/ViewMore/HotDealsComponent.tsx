@@ -6,8 +6,8 @@ import Link from 'next/link'
 
 const HotDealsComponent = () => {
   return (
-    <Link href='/properties/description'>
-      <div className=' w-[15.5625rem] lg:shadow-box lg:w-[23.5%] lg:max-w-[273px] '>
+    <div className=' w-[15.5625rem] lg:shadow-box lg:w-[23.5%] lg:max-w-[273px] '>
+      <Link href='/properties/description'>
         <ResponsiveImage 
           url={demoImg}
           alt='apartment'
@@ -22,9 +22,8 @@ const HotDealsComponent = () => {
             <h6 className='text-xs'>$150,000</h6>
           </div>
         </div>
+      </Link>        
       </div>
-    </Link>
-    
   )
 }
 
