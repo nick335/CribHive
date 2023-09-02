@@ -32,13 +32,13 @@
  @apply relative min-w-[calc(50%-0.375rem)] w-[calc(50%-0.375rem)] h-[27.4375rem]
  }
   .filterSectionDiv{
- @apply border-b border-darkBorder2 mt-6;
+ @apply border-b border-darkBorder2 mt-6 lg:mt-4;
  }
  .filterSectionDivHeader{
  @apply text-base font-bold font-jhengHei;
  }
  .btnFilterDiv{
- @apply outline-none w-2/4 bg-transparent flex justify-center items-center h-12 border rounded-lg gap-x-2.5 cursor-pointer;
+ @apply outline-none w-2/4 bg-transparent flex justify-center items-center h-12 border rounded-lg gap-x-2.5 cursor-pointer lg:w-[9.9375rem];
 }
 .btnFilterDivDefault{
  @apply text-headerPrimary border-black transition-all ease-in duration-75;
@@ -50,10 +50,10 @@
  @apply w-4 h-4;
 }
 .filterInput{
- @apply w-full h-12 bg-transparent border border-black outline-none text-headerPrimary placeholder-headerPrimary rounded-lg pl-4 focus:border-primaryBorder transition-all ease-in duration-200;
+ @apply w-full h-12 bg-transparent border border-black outline-none text-headerPrimary placeholder-headerPrimary rounded-lg pl-4 focus:border-primaryBorder transition-all ease-in duration-200 lg:w-[9.9375rem] lg:h-10;
 }
 .radioDiv{
-@apply flex gap-x-6 items-center mt-5 font-jhengHei text-base;
+@apply flex gap-x-6 items-center mt-5 lg:mt-4 font-jhengHei text-base lg:inline-flex mr-6;
 }
 .FilterRadioBtn{
 @apply cursor-pointer w-[0.9375rem] h-[0.9375rem] bg-bgPrimary border border-[#4A4A4A] rounded-full;

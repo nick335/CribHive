@@ -1,6 +1,14 @@
 .photo{
-@apply relative h-[10rem] w-[210px] mx-auto md:mx-0 md:!w-[60%] md:h-[22rem] lg:h-[32rem];
+@apply relative h-[10rem] w-[210px] mx-auto md:mx-0 md:!w-[50%] md:h-[20rem] lg:h-[27rem] xl:h-[29rem];
 }
+
 .background{
- background: linear-gradient(-171deg,  rgba(249, 242, 230, 1) 12%, rgba(99, 106, 107, 1) 40%);
+ background: #201B1B;
+ background-image: linear-gradient(260deg, #F4E9D6 -1.81%, rgba(249, 242, 230, 0.00) 100.69%);
+}
+@media only screen and (max-width: 768px){
+  .background{
+   background: #201B1B;
+   background-image: linear-gradient(210deg, #F4E9D6 20.11%, rgba(249, 242, 230, 0.00) 69.33%);
+  }
 }

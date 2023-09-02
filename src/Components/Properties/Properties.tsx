@@ -13,15 +13,15 @@ const Properties = () => {
   return (
     <>
     <section className=' lg:relative max-w-[620px] mx-auto lg:w-full lg:max-w-none'>
-     <div className=' lg:absolute lg:min-w-[31.25rem] lg:max-w-[31.25rem] lg:top-2/4 lg:-translate-y-[50%] lg:left-2/4  lg:-translate-x-[41%]'>
+     <div className=' lg:absolute lg:min-w-[31.25rem] lg:max-w-[31.25rem] lg:top-2/4 lg:-translate-y-[50%] lg:left-2/4  lg:-translate-x-[50%]'>
       <div className='relative '>
        <input type='text'  placeholder='Location e.g Yaba' className={`${styles.input}`} />
        <FontAwesomeIcon icon={faMagnifyingGlass} className='w-5 h-5 absolute top-2/4 -translate-y-2/4 right-4 text-headerPrimary'/>
       </div>
      </div>
-     <div className='mt-2 flex w-full h-11 px-4 lg:px-10 rounded-lg justify-between items-center bg-bgSecondary text-textSecondary lg:h-16 lg:max-w-[70rem]'>
+     <div className='mt-2 flex w-full h-11 px-4 lg:px-10 rounded-lg lg:pr-24 justify-between items-center bg-bgSecondary text-textSecondary lg:h-16 lg:max-w-[70rem] lg:mx-auto'>
       <h3>Apartments <span className='mx-2'>/</span> Hostels</h3>
-      <h3 className='flex items-center cursor-pointer' onClick={toggleFilter}>Filter
+      <h3 className='flex items-center cursor-pointer lg:border lg:border-primaryBorder lg:px-4  lg:py-2 rounded-xl' onClick={toggleFilter}>Filter
        <span className='ml-2'>
         <LuFilter color="#E0BC84" />
        </span>
