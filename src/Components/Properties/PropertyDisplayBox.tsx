@@ -5,7 +5,7 @@ import demoImg from '../../../public/images/home/demo.png'
 
 const PropertyDisplayBox = () => {
   return (
-   <div className='w-full max-w-[21.3125rem] sm:min-w-[17rem] sm:w-[48%]  md:max-w-[22.5rem] mdx:w-[31%] mdx:min-w-[16rem] mdx:max-w-[19rem]   lg:max-w-[18.375rem] xl:max-w-[15rem]'>
+   <div className='w-full max-w-[21.3125rem] sm:min-w-[17rem] sm:w-[48%]  md:max-w-[22.5rem] mdx:w-[31%] mdx:min-w-[16rem] mdx:max-w-[19rem]  lg:w-[calc(33.3%-1rem)] lg:max-w-[21.3125rem] xl:w-[calc(25%-1.125rem)] 3xl:w-[calc(20%-1.2rem)] 3xl:max-w-[22.3rem]'>
    <ResponsiveImage 
     url={demoImg}
     alt='apartment_Img'

@@ -5,7 +5,7 @@
 @apply h-[2px] w-5  mb-1 transition-all ease-in-out duration-300 bg-black;
 }
 .li{
-@apply flex items-center h-10 border-b border-primaryBorder mb-2 text-base font-normal lg:h-fit lg:border-b-0 lg:mb-0 xl:text-lg cursor-pointer ;
+@apply flex items-center h-10 border-b border-primaryBorder mb-2 text-base font-normal lg:h-fit lg:border-b-0 lg:mb-0 xl:text-lg cursor-pointer hover:text-textSecondary ;
 }
 .arrow{
 @apply relative w-[7px] h-1 cursor-pointer transition-all duration-1000 ease-in-out;

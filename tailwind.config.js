@@ -47,10 +47,36 @@ module.exports = {
             opacity: '0',
           }
         },
+        slideUp:{
+          '0%': {
+            top: '50%',
+            left: '50%',
+            transform: 'translate(-50%, -50%)',
+          },
+          '100%': {
+            top: '-150%',
+            left: '50%',
+            transform: 'translate(-50%, -50%)'
+          }
+        },
+        slideDown: {
+          '0%': {
+            top: '-150%',
+            left: '50%',
+            transform: 'translate(-50%, -50%)'
+          },
+          '100%': {
+            top: '50%',
+            left: '50%',
+            transform: 'translate(-50%, -50%)'
+          }
+        },
       },
       animation: {
         'appear': 'appear 300ms  ease-in forwards',
         'disappear': 'disappear 300ms  ease-in forwards',
+        'slideUp': 'slideUp 1000ms ease-in-out both',
+        'slideDown': 'slideDown 1000ms ease-in-out both'
       },
       boxShadow: {
         'navShadow': '0px 8px 12px 0px rgba(32, 27, 24, 0.30)',
@@ -62,7 +88,8 @@ module.exports = {
         'formShadow': '8px 8px 16px 0px rgba(0,0,0,0.20), -8px -8px 16px 0px rgba(0,0,0, 0.20)',
       },
       screens:{
-        'mdx': '898px'
+        'mdx': '898px',
+        '3xl': '1780px'
       }
     },
   },

@@ -1,14 +1,17 @@
 'use client'
-import { faHome, faHotel, faXmark } from '@fortawesome/free-solid-svg-icons'
+import { faXmark } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import styles from './properties.module.css'
 import React, { useState, useEffect } from 'react'
 import Apartment from '../Utility/icons/Apartment'
 import Hostel from '../Utility/icons/Hostel'
 import { useStore } from '@/store/useFilter'
+import { useStore as windowStore } from '@/store/useWindowWidth'
+import {motion} from 'framer-motion'
 
 const Filter = () => {
  const {showFilter, toggleFilter} = useStore()
+ const { windowWidth } = windowStore()
  const [isApartmentActive, setApartmentActive] = useState(false)
  const [isHostelActive, setHostelActive] = useState(false)
 
@@ -18,8 +21,37 @@ const Filter = () => {
  }, [showFilter])
 
   return (
-    <div className={` ${ showFilter ? 'block lg:z-50 lg:flex' : 'hidden' } absolute top-[52px] left-0 w-full h-[calc(100vh-51px)] bg-bgPrimary font-jhengHei lg:h-screen lg:top-0  lg:bg-black/20  lg:items-center lg:justify-center `}>
-      <div className={`${ showFilter ? 'block lg:z-50' : 'hidden' }  lg:relative lg:min-w-[44rem] lg:max-w-[44rem] lg:bg-bgPrimary lg:h-[31.375] lg:rounded-3xl lg:py-8 lg:px-[3.3rem]`}>
+    <motion.div 
+      initial={false}
+      animate={
+        showFilter ? windowWidth >= 1023 ?  {
+          display: "block",
+          opacity: 1,
+          transition: {
+            opacity: {
+              duration: 0.2,
+              delay: 0.1,
+            }
+          }
+        } : {
+          display: "block"
+        } : windowWidth >= 1023 ? {
+          opacity: 0,
+          transition: {
+            delay: 0.9,
+            opacity: {
+              duration: 0.1
+            }
+          },
+          transitionEnd: {
+            display: 'none'
+          }
+        } : {
+          display: 'none'
+        }
+      }
+    className={` absolute top-[52px] left-0 w-full h-[calc(100vh-51px)] bg-bgPrimary font-jhengHei lg:h-screen lg:top-0  lg:bg-black/20 `}>
+      <div className={`${ showFilter ? 'lg:animate-slideDown' : 'lg:animate-slideUp' }  lg:relative lg:min-w-[44rem] lg:h-fit lg:max-w-[44rem] lg:bg-bgPrimary lg:rounded-3xl lg:py-8 lg:px-[3.3rem] `}>
         <div className='flex items-center pl-[0.69rem] pr-[0.88rem] py-[0.68rem] border-b border-primaryBorder lg:px-0'>
         <FontAwesomeIcon icon={faXmark} className='w-6 h-6 text-textSecondary lg:text-headerPrimary cursor-pointer lg:absolute lg: right-4 top-4' onClick={toggleFilter}/>
         <h4 className='ml-6 font-bold text-xl lg:ml-0'>Filter</h4>
@@ -67,9 +99,8 @@ const Filter = () => {
           </div>
           <button className='btnPrimary mt-8 w-full h-12 rounded-lg '>Continue</button>
         </div>
-      </div>
-     
-    </div>
+      </div>  
+    </motion.div>
   )
 }
 

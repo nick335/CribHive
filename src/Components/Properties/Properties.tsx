@@ -30,7 +30,7 @@ const Properties = () => {
     </section>
     <section className='mt-4 lg:mt-6 w-fit'>
      <h3 className='font-bold font-jhengHei text-headerPrimary lg:text-2xl'>Apartments</h3>
-     <div className='mt-3  lg:mt-[0.88rem] flex flex-wrap gap-5 justify-center md:justify-between  lg:justify-items-start lg:justify-between lg:gap-y-8'>
+     <div className='mt-3  lg:mt-[0.88rem] flex flex-wrap gap-5 justify-center md:justify-between  lg:justify-items-start lg:justify-evenly lg:gap-x-6 lg:gap-y-8'>
       <PropertyDisplayBox />
       <PropertyDisplayBox />
       <PropertyDisplayBox />

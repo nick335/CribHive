@@ -53,7 +53,7 @@
  @apply w-full h-12 bg-transparent border border-black outline-none text-headerPrimary placeholder-headerPrimary rounded-lg pl-4 focus:border-primaryBorder transition-all ease-in duration-200 lg:w-[9.9375rem] lg:h-10;
 }
 .radioDiv{
-@apply flex gap-x-6 items-center mt-5 lg:mt-4 font-jhengHei text-base lg:inline-flex mr-6;
+@apply flex gap-x-6 items-center mt-5 lg:mt-4 font-jhengHei text-base lg:inline-flex mr-6 lg:gap-x-3;
 }
 .FilterRadioBtn{
 @apply cursor-pointer w-[0.9375rem] h-[0.9375rem] bg-bgPrimary border border-[#4A4A4A] rounded-full;
