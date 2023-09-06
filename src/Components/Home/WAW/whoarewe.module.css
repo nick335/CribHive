@@ -1,5 +1,5 @@
 .photo{
-@apply relative h-[10rem] w-[210px] mx-auto md:mx-0 md:!w-[50%] md:h-[20rem] lg:h-[27rem] xl:h-[29rem];
+@apply relative h-[10rem] w-[210px] mx-auto md:mx-0 md:!w-full md:h-[20rem] lg:h-[27rem] xl:h-[29rem];
 }
 
 .background{

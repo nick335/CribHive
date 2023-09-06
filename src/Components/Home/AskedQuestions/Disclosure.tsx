@@ -56,7 +56,7 @@ const Disclosure = () => {
          }
         }
        }
-       className='text-xs border-b  border-b-primaryBorder lg:text-base'>
+       className='text-xs border-b  border-b-primaryBorder lg:text-base pl-4'>
        Lorem ipsum dolor sit amet consectetur adipisicing elit. Corrupti reprehenderit sapiente totam temporibus hic dolore. Eligendi, facere! Odit, atque? Accusamus voluptas repellendus itaque, dicta exercitationem tenetur dolores magni nisi delectus!
      </motion.div>
     </div>

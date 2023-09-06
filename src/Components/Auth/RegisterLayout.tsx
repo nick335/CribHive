@@ -5,8 +5,8 @@ import RegisterAdditionalForm from './RegisterAdditionalForm'
 const RegisterLayout = () => {
   return (
     <div className='lg:pb-16'>
-     {/* <RegisterForm /> */}
-     <RegisterAdditionalForm />
+     <RegisterForm />
+     {/* <RegisterAdditionalForm /> */}
     </div>
   )
 }

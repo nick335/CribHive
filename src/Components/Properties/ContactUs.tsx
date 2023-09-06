@@ -3,6 +3,7 @@ import { faPhone } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import styles from './properties.module.css'
 import React from 'react'
+import { BsTelephone } from 'react-icons/bs'
 
 const ContactUs = () => {
   return (
@@ -13,7 +14,7 @@ const ContactUs = () => {
       <h5 className='mx-auto'>WhatsApp Message</h5>
      </div>
      <div className={`mt-4 lg:mt-6  ${styles.contactusDiv}`} >
-      <FontAwesomeIcon icon={faPhone} className='w-6 h-6' />
+      <BsTelephone size='24px' color='#201B1B' />
       <h5 className='mx-auto'>Phone Call</h5>
      </div>
     </div>

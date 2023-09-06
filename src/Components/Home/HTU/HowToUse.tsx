@@ -16,7 +16,7 @@ const HowToUse = () => {
  const { windowWidth } = useStore()
  const [agentStepsDisplay, setAgentStepsDisplay] = useState(false)
  const nodeRef = useRef<any>(null)
- const delay = 4000
+ const delay = 8000
  function displayAgentSteps (){
   setAgentStepsDisplay(true)
  }
@@ -52,7 +52,7 @@ const HowToUse = () => {
 
 
   return (
-    <section id='HTU' className=' font-jhengHei relative mt-12 md:px-6 md:bg-bgLight md:pt-12 lg:px-[5%]'>
+    <section id='HTU' className=' font-jhengHei relative mt-12 md:px-6 md:bg-bgLight md:pt-12 lg:px-[5%] lg:mt-[4.5rem]'>
       <div className='flex items-center justify-center md:relative md:h-[34px] '>
         <h2 className='text-center font-bold text-lg text-headerPrimary md:text-xl lg:text-3xl '>How to Use Cribhive</h2>
         <div className='absolute top-[14.12rem] left-2/4 -translate-x-2/4 z-10 w-[11.625rem] mx-auto border border-headerPrimary flex px-3.5 text-xs items-center text-center rounded md:mx-0 md:ml-auto lg:text-lg lg:w-[18.5rem] lg:px-6  md:top-0 md:right-0 md:translate-x-0'>

@@ -66,9 +66,9 @@ const AddPropertyForm = () => {
 //   picRef.current?.click() 
 // }
 
-function sleep(){
-  return new Promise(resolve => setTimeout(resolve, 1000))
-}
+// function sleep(){
+//   return new Promise(resolve => setTimeout(resolve, 1000))
+// }
 
 
 function gotIt(para: string){
@@ -83,7 +83,7 @@ function gotIt(para: string){
       picture: false
     }
    })
-   document.getElementById('picInput')?.click()
+  //  document.getElementById('picInput')?.click()
   //  sleep().then(() => { setTriggerInputs(prev => { return {
   //   ...prev,
   //   picture: true
@@ -93,7 +93,6 @@ function gotIt(para: string){
     // initiate image input
   }
 }
-console.log(displayNotification.picture)
 
 // handle Selecting Images
 function handleImageSelection(e : React.ChangeEvent<HTMLInputElement>){
@@ -151,7 +150,7 @@ function handleImageSelection(e : React.ChangeEvent<HTMLInputElement>){
         <p>Pictures</p>
         <FontAwesomeIcon icon={faPlus} />
       </div>
-      <div className={`w-full flex justify-between px-4 h-12 bg-transparent border border-black cursor-pointer items-center rounded-lg ${styles.inputGap}`}>
+      <div className={`w-full flex justify-between px-4 h-12 bg-transparent border border-black cursor-pointer items-center rounded-lg ${styles.inputGap}`} onClick={toggleVidNotification} >
         <input type='file' className='hidden' />
         <p>Videos</p>
         <FontAwesomeIcon icon={faPlus} />

@@ -81,7 +81,7 @@ module.exports = {
       boxShadow: {
         'navShadow': '0px 8px 12px 0px rgba(32, 27, 24, 0.30)',
         'overflowdiv': '4px 4px 35.5px 0px rgba(224, 188, 132, 0.10)',
-        'boxContent': '0px 3.77px 3.77px 0px rgba(32, 27, 24, 0.30)',
+        'boxContent': '0px 3.77558pxpx 3.77558px 0px rgba(32, 27, 24, 0.30)',
         'box' : '0px 8px 12px 0px rgba(32, 27, 24, 0.30)',
         'apartmentBox': '0px 4.53px 4.53px 0px rgba(32, 27, 24, 0.30)' ,
         'contactShadow': '2px 4px 17px 8px rgba(0, 0, 0, 0.25)',

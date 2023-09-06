@@ -19,7 +19,7 @@ const AskedQuestions = () => {
   setAgentQuestionDisplay(true)
  }
   return (
-    <section className='mt-12 w-[90%] mx-auto font-jhengHei'>
+    <section className='mt-12 w-[90%] mx-auto font-jhengHei lg:mt-[7.62rem]'>
      <div className='lg:flex '>
        <h3 className='text-headerPrimary text-lg text-center font-bold lg:text-4xl self-center mx-auto'>Frequently asked questions</h3>
        <div className='mt-3 w-[11.625rem] mx-auto border border-headerPrimary flex px-3.5 text-xs items-center text-center rounded lg:text-lg lg:w-[18.5rem] lg:px-6 lg:mx-0'>

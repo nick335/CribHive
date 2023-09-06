@@ -50,8 +50,8 @@ const Filter = () => {
           display: 'none'
         }
       }
-    className={` absolute top-[52px] left-0 w-full h-[calc(100vh-51px)] bg-bgPrimary font-jhengHei lg:h-screen lg:top-0  lg:bg-black/20 `}>
-      <div className={`${ showFilter ? 'lg:animate-slideDown' : 'lg:animate-slideUp' }  lg:relative lg:min-w-[44rem] lg:h-fit lg:max-w-[44rem] lg:bg-bgPrimary lg:rounded-3xl lg:py-8 lg:px-[3.3rem] `}>
+    className={` absolute top-[52px] left-0 w-full h-[calc(100vh-51px)] bg-bgPrimary font-jhengHei lg:h-screen lg:top-0  lg:bg-black/20 lg:z-50`}>
+      <div className={`${ showFilter ? 'lg:animate-slideDown' : 'lg:animate-slideUp' } lg:!z-50 lg:relative lg:min-w-[44rem] lg:h-fit lg:max-w-[44rem] lg:bg-bgPrimary lg:rounded-3xl lg:py-8 lg:px-[3.3rem] `}>
         <div className='flex items-center pl-[0.69rem] pr-[0.88rem] py-[0.68rem] border-b border-primaryBorder lg:px-0'>
         <FontAwesomeIcon icon={faXmark} className='w-6 h-6 text-textSecondary lg:text-headerPrimary cursor-pointer lg:absolute lg: right-4 top-4' onClick={toggleFilter}/>
         <h4 className='ml-6 font-bold text-xl lg:ml-0'>Filter</h4>

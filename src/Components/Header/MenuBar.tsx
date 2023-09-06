@@ -10,7 +10,7 @@ const {isOpen, toggleMenu} = useStore()
     <div className={` lg:ml-0 ml-auto lg:hidden flex flex-col items-center justify-center  h-[35px] w-[35px] rounded-full  cursor-pointer border border-black  ${ isOpen ? ' ' : ''}`} onClick={toggleMenu}>
       <div className= {`${styles.bar} ${isOpen ? 'translate-y-[6px] rotate-45' : ''}`}  ></div>
       <div className={`${styles.bar} ${isOpen ? 'opacity-0' : ''}`}></div>
-      <div className={`${styles.bar} mb-0 ${isOpen ? 'transform -translate-y-[6px] -rotate-45 ' : '' }`}></div>
+      <div className={`!mb-0 ${styles.bar} ${isOpen ? 'transform -translate-y-[6px] -rotate-45 ' : '' }`}></div>
     </div>
   )
 }

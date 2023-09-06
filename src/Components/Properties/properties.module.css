@@ -1,5 +1,5 @@
 .input{
- @apply w-full h-11 bg-transparent border border-black outline-none text-headerPrimary placeholder-headerPrimary rounded-lg pl-4 focus:border-primaryBorder transition-all ease-in duration-200 lg:bg-bgPrimary;
+ @apply w-full h-11 bg-transparent border border-black outline-none text-headerPrimary placeholder-headerPrimary rounded-xl lg:rounded-2xl pl-4 focus:border-primaryBorder transition-all ease-in duration-200 lg:bg-bgPrimary;
 }
 .apartmentImgSize{
  @apply  relative w-full h-[15.5rem] lg:w-full;
