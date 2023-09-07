@@ -7,7 +7,9 @@ import Apartment from '../Utility/icons/Apartment'
 import Hostel from '../Utility/icons/Hostel'
 import PictureNotificattion from './PictureNotificattion'
 import VideoNotification from './VideoNotification'
-import { string } from 'zod'
+import PicturesReview from './PicturesReview'
+import { StaticImageData } from 'next/image'
+import VideoReview from './VideoReview'
 
 
 
@@ -27,7 +29,10 @@ const AddPropertyForm = () => {
   video: false,
  })
  // selectedImages Array
- const [selectedImages, setSelectedImages] = useState< Array<ImageData | string>>([])
+ const [selectedImages, setSelectedImages] = useState< Array<StaticImageData | string>>([])
+ const [selectedVid, setSelectedVid] = useState<any>()
+
+
 
 // display picture notification
  function togglePicNotification(){
@@ -49,17 +54,17 @@ const AddPropertyForm = () => {
   })
  }
  
- useEffect(() => {
-  if(triggerInputs.picture === true){
-    picRef.current?.click()
-    setTriggerInputs(prev => {
-      return{
-        ...prev,
-        picture: false
-      }
-    })
-  }
- }, [triggerInputs.picture])
+//  useEffect(() => {
+//   if(triggerInputs.picture === true){
+//     picRef.current?.click()
+//     setTriggerInputs(prev => {
+//       return{
+//         ...prev,
+//         picture: false
+//       }
+//     })
+//   }
+//  }, [triggerInputs.picture])
 
 //
 // function execute(){
@@ -75,15 +80,17 @@ function gotIt(para: string){
   // checking which got it button is being clicked
   if(para === 'Vid'){
     toggleVidNotification()
+    vidRef.current?.click()
   }else if(para === 'Pic'){
     // close notification
-   setDisplayNotifaction((prev) => {
-    return{
-      ...prev,
-      picture: false
-    }
-   })
-  //  document.getElementById('picInput')?.click()
+    togglePicNotification()
+  //  setDisplayNotifaction((prev) => {
+  //   return{
+  //     ...prev,
+  //     picture: false
+  //   }
+  //  })
+   document.getElementById('picInput')?.click()
   //  sleep().then(() => { setTriggerInputs(prev => { return {
   //   ...prev,
   //   picture: true
@@ -94,13 +101,19 @@ function gotIt(para: string){
   }
 }
 
+function deleteSelectedImage(idx: number){
+  let imageCopy = selectedImages
+  imageCopy.splice(idx, 1)
+  setSelectedImages(imgfiles => [...imageCopy])
+}
+
 // handle Selecting Images
 function handleImageSelection(e : React.ChangeEvent<HTMLInputElement>){
   togglePicNotification()
   // e.preventDefault();
   if(e.currentTarget.files){
     if(e.currentTarget.files?.length !== 0){
-      const images: Array<ImageData | string> = []
+      const images: Array<StaticImageData | string> = []
       for (let i=0; i < e.currentTarget.files?.length; i++){
         images.push(URL.createObjectURL(e.currentTarget.files[i]))
       }
@@ -108,6 +121,21 @@ function handleImageSelection(e : React.ChangeEvent<HTMLInputElement>){
     }
   }
 }
+
+//handling selecting Video
+function handleVideoSelection(e: React.ChangeEvent<HTMLInputElement>){
+  toggleVidNotification()
+  if(e.currentTarget.files){
+    if(e.currentTarget.files?.length !== 0){
+      const vid = e.currentTarget.files[0]
+      const vidUrl = URL.createObjectURL(vid)
+      setSelectedVid(vidUrl)
+    }else{
+      toggleVidNotification()
+    } 
+  }
+}
+
 // select Apartement
  function setIsApartmentTrue(){
   setIsApartment(true)
@@ -138,7 +166,7 @@ function handleImageSelection(e : React.ChangeEvent<HTMLInputElement>){
         <input type='text' className={`${styles.input}`} placeholder='Rent' />
        </div>
        <div className='w-full'>
-        <input type='text' className={`${styles.input}`} placeholder='Bedroom(s)' />
+        <input type='text' className={`${styles.input}`} placeholder={isApartment ? 'Bedroom(s)' : 'No. Man room'} />
        </div>
       </div>
       <div className={`relative ${styles.inputGap}`}>
@@ -150,11 +178,15 @@ function handleImageSelection(e : React.ChangeEvent<HTMLInputElement>){
         <p>Pictures</p>
         <FontAwesomeIcon icon={faPlus} />
       </div>
+      {/* image Preview */}
+      {selectedImages.length > 0 &&  <PicturesReview images={selectedImages}  cancel={deleteSelectedImage} /> }
       <div className={`w-full flex justify-between px-4 h-12 bg-transparent border border-black cursor-pointer items-center rounded-lg ${styles.inputGap}`} onClick={toggleVidNotification} >
-        <input type='file' className='hidden' />
+        <input type='file' className='hidden' ref={vidRef} onChange={handleVideoSelection} onBeforeInput={toggleVidNotification}/>
         <p>Videos</p>
         <FontAwesomeIcon icon={faPlus} />
       </div>
+      {/* vid previw */}
+      { selectedVid && <VideoReview vid={selectedVid} /> }
       <button className={`btnPrimary mt-8 ${styles.formBtn}`}>Post</button>
      </form>
      <PictureNotificattion display={displayNotification.picture} gotIt={gotIt} />
