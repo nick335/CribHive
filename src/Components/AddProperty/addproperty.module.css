@@ -31,3 +31,12 @@
 .notifyBtn{
  @apply w-full rounded-lg mt-4 h-9;
 }
+.previewImage{
+ @apply relative w-[5.125rem] h-24 rounded-[0.25rem] border border-secondaryBorder;
+}
+.previewImageAddon{
+ @apply rounded-[0.25rem]
+}
+.previewImageDelete{
+ @apply relative w-4 h-4;
+}
