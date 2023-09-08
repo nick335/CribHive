@@ -80,6 +80,7 @@ module.exports = {
       },
       boxShadow: {
         'navShadow': '0px 8px 12px 0px rgba(32, 27, 24, 0.30)',
+        'navShadowLg': '0px 8px 10px 0px rgba(32, 27, 24, 0.10)',
         'overflowdiv': '4px 4px 35.5px 0px rgba(224, 188, 132, 0.10)',
         'boxContent': '0px 3.77558pxpx 3.77558px 0px rgba(32, 27, 24, 0.30)',
         'box' : '0px 8px 12px 0px rgba(32, 27, 24, 0.30)',

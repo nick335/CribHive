@@ -1,11 +1,11 @@
 .logo{
-@apply relative w-[141px] h-[30px] ml-auto lg:ml-0 xl:w-[188px] xl:h-[40px];
+@apply relative w-[8.8125rem] h-[1.875rem] ml-auto lg:ml-0 xl:w-[9.9875rem] xl:h-[2.125rem];
 }
 .bar{
 @apply h-[2px] w-5  mb-1 transition-all ease-in-out duration-300 bg-black;
 }
 .li{
-@apply flex items-center h-10 border-b border-primaryBorder mb-2 text-base font-normal lg:h-fit lg:border-b-0 lg:mb-0 xl:text-lg cursor-pointer hover:text-textSecondary ;
+@apply flex items-center h-10 border-b border-primaryBorder mb-2 text-base font-normal lg:h-fit lg:border-b-0 lg:mb-0 cursor-pointer hover:text-textSecondary ;
 }
 /* .li2{
 @apply flex items-center h-10 border-b border-primaryBorder mb-2 text-base font-normal lg:h-fit lg:border-b-0 lg:mb-0 xl:text-lg cursor-pointer hover:text-textSecondary;

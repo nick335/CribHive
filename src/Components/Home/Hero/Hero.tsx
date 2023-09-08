@@ -8,7 +8,7 @@ const Hero = () => {
 
      <div className='font-jhengHei mt-4 flex gap-x-3 sm:max-w-lg sm:mx-auto lg:mt-10 lg:max-w-[786px] lg:gap-x-4'>
       <input type='text' placeholder='Location e.g Yaba' className='w-full rounded-lg border border-headerPrimary bg-transparent pl-4 pr-3 placeholder-textPrimary/70 lg:rounded-xl lg:placeholder:text-xl' />
-      <button className='btnPrimary min-w-[6.8125rem] h-10 hover:bg-btnhover rounded-lg text-sm lg:h-16 lg:min-w-[9rem] lg:rounded-xl lg:text-2xl'>Search</button>
+      <button className='btnPrimary min-w-[6.8125rem] h-10 hover:bg-btnhover rounded-lg text-sm lg:h-[3.2rem] lg:min-w-[9rem] lg:rounded-xl lg:text-xl'>Search</button>
      </div>
     </section>
   )
