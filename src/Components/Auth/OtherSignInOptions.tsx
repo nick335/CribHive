@@ -21,15 +21,6 @@ const OtherSignInOptions = () => {
       />
       Login with Google
      </button>
-     <button className={`${styles.otherSignInOptionsBtn} mt-6`}>
-      <ResponsiveImage 
-       url={facebook}
-       alt='facebook icon'
-       style={styles.icon}
-       addons=''
-      />
-      Login with Facebook
-     </button>
     </div>
   )
 }
