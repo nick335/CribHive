@@ -2,15 +2,17 @@
 import React from 'react'
 import DotControl from './DotControl'
 import ArrowControls from './ArrowControls'
-import Demo1 from '../../../public/images/properties/model1.png'
-import Demo2 from '../../../public/images/properties/model2.jpg'
-import Demo3 from '../../../public/images/properties/model3.jpg'
+import { StaticImageData } from 'next/image'
 import ResponsiveImage from '../Utility/ResponsiveImage'
 import styles from './properties.module.css'
 
-const MobileSlider = () => {
+interface props {
+  images: string[] | StaticImageData[]
+}
+
+const MobileSlider = ({images}: props) => {
   const [index, setIndex] = React.useState(0)
-  const images = [Demo3, Demo2, Demo3, Demo2]
+
 
   function changeIndex(idx: number){
     setIndex(idx)
@@ -25,6 +27,7 @@ const MobileSlider = () => {
   })
 
   const slidingImages = images.map((each, idx) => {
+    // const url = URL.createObjectURL(each)
     return <ResponsiveImage 
               key={idx}
               alt='slidingImages'

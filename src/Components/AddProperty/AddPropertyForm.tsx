@@ -7,10 +7,10 @@ import Apartment from '../Utility/icons/Apartment'
 import Hostel from '../Utility/icons/Hostel'
 import PictureNotificattion from './PictureNotificattion'
 import VideoNotification from './VideoNotification'
-import PicturesReview from './PicturesReview'
+import PicturesReview from '../ManageProperties/PicturesReview'
 import { StaticImageData } from 'next/image'
-import VideoReview from './VideoReview'
-
+import VideoReview from '../ManageProperties/VideoReview'
+import { Listbox } from '@headlessui/react'
 
 
 
@@ -80,7 +80,10 @@ function gotIt(para: string){
   // checking which got it button is being clicked
   if(para === 'Vid'){
     toggleVidNotification()
-    vidRef.current?.click()
+    
+    if(vidRef.current){
+      vidRef.current.click()
+    }
   }else if(para === 'Pic'){
     // close notification
     togglePicNotification()
@@ -158,8 +161,12 @@ function handleVideoSelection(e: React.ChangeEvent<HTMLInputElement>){
       </div>
      </div>
      <form>
-     <div className={`${styles.inputGap}`}>
-       <input className={`${styles.input}`} type='text' placeholder=' Address' />
+      <div>
+        <div className={`${styles.inputGap}`}>
+          <input className={`${styles.input}`} type='text' placeholder=' Address' />
+        </div>
+        {/* <div>
+        </div> */}
       </div>
       <div className={`flex  items-center gap-x-6 ${styles.inputGap}`}>
        <div className='w-full'>
@@ -187,7 +194,7 @@ function handleVideoSelection(e: React.ChangeEvent<HTMLInputElement>){
       </div>
       {/* vid previw */}
       { selectedVid && <VideoReview vid={selectedVid} /> }
-      <button className={`btnPrimary mt-8 ${styles.formBtn}`}>Post</button>
+      <button className={`btnPrimary mt-8 ${styles.formBtn}`}>Preview</button>
      </form>
      <PictureNotificattion display={displayNotification.picture} gotIt={gotIt} />
      <VideoNotification display={displayNotification.video} gotIt={gotIt}  />

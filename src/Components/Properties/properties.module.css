@@ -40,6 +40,9 @@
  .btnFilterDiv{
  @apply outline-none w-2/4 bg-transparent flex justify-center items-center h-12 border rounded-lg gap-x-2.5 cursor-pointer lg:w-[9.9375rem];
 }
+.btnTypeDiv{
+@apply outline-none min-w-[150px] w-[calc(50%-0.75rem)] bg-transparent flex justify-center items-center h-12 border rounded-lg gap-x-2.5 cursor-pointer lg:w-[9.9375rem];
+}
 .btnFilterDivDefault{
  @apply text-headerPrimary border-black transition-all ease-in duration-75;
 }

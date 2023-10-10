@@ -8,12 +8,12 @@ import Hostel from '../Utility/icons/Hostel'
 import { useStore } from '@/store/useFilter'
 import { useStore as windowStore } from '@/store/useWindowWidth'
 import {motion} from 'framer-motion'
+import BedroomsFilter from './BedroomsFilter'
+import RoomsFiliter from './RoomsFiliter'
 
 const Filter = () => {
- const {showFilter, toggleFilter} = useStore()
+ const {showFilter, toggleFilter, type, setType} = useStore()
  const { windowWidth } = windowStore()
- const [isApartmentActive, setApartmentActive] = useState(false)
- const [isHostelActive, setHostelActive] = useState(false)
 
  // disable scroll when showFilter is active  
  useEffect(() => {
@@ -50,8 +50,8 @@ const Filter = () => {
           display: 'none'
         }
       }
-    className={` absolute top-[52px] left-0 w-full h-[calc(100vh-51px)] bg-bgPrimary font-jhengHei lg:h-screen lg:top-0  lg:bg-black/20 lg:z-50`}>
-      <div className={`${ showFilter ? 'lg:animate-slideDown' : 'lg:animate-slideUp' } lg:!z-50 lg:relative lg:min-w-[44rem] lg:h-fit lg:max-w-[44rem] lg:bg-bgPrimary lg:rounded-3xl lg:py-8 lg:px-[3.3rem] `}>
+    className={` fixed top-[52px] left-0 w-full h-[calc(100vh-51px)] bg-bgPrimary font-jhengHei lg:h-screen lg:top-0  lg:bg-black/20 lg:z-50 pb-6`}>
+      <div className={`${ showFilter ? 'lg:animate-slideDown' : 'lg:animate-slideUp' } lg:!z-50 lg:relative lg:min-w-[44rem] lg:h-fit lg:max-w-[44rem] max-h-[calc(100vh-51px)] overflow-y-auto  lg:bg-bgPrimary lg:rounded-3xl lg:py-8 lg:px-[3.3rem] lg:scrollbar-thin lg:scrollbar-track-gray-100 lg:scrollbar-track-rounded-3xl lg:scrollbar-thumb-gray-700 lg:scrollbar-thumb-rounded-3xl`}>
         <div className='flex items-center pl-[0.69rem] pr-[0.88rem] py-[0.68rem] border-b border-primaryBorder lg:px-0'>
         <FontAwesomeIcon icon={faXmark} className='w-6 h-6 text-textSecondary lg:text-headerPrimary cursor-pointer lg:absolute lg: right-4 top-4' onClick={toggleFilter}/>
         <h4 className='ml-6 font-bold text-xl lg:ml-0'>Filter</h4>
@@ -71,32 +71,22 @@ const Filter = () => {
           </div>
           <div className={`${styles.filterSectionDiv} pb-[1.84rem] lg:pb-4`}>
           <h3 className={`${styles.filterSectionDivHeader}`}>Type</h3>
-          <div className='flex mt-2 gap-x-3 lg:gap-x-6'>
-            <div className={` ${styles.btnFilterDiv} ${isApartmentActive ? styles.btnFilterDivActive : styles.btnFilterDivDefault}`} onClick={() => setApartmentActive((prev) => !prev)} >
+          <div className='flex mt-2 gap-3 lg:gap-x-6 flex-wrap'>
+            <div className={` ${styles.btnTypeDiv} ${ type === 'Apartment' ? styles.btnFilterDivActive : styles.btnFilterDivDefault}`} onClick={() => setType('Apartment')} >
             Apartment
-            <Apartment active={isApartmentActive} />
+            <Apartment active={type} />
             </div>
-            <div className={`${styles.btnFilterDiv} ${isHostelActive ? styles.btnFilterDivActive : styles.btnFilterDivDefault} `} onClick={() => setHostelActive((prev) => !prev)}>
+            <div className={`${styles.btnTypeDiv} ${type === 'Hostel' ? styles.btnFilterDivActive : styles.btnFilterDivDefault} `} onClick={() => setType('Hostel')}>
             Hostel
-            <Hostel active={isHostelActive}/>
+            <Hostel active={type}/>
+            </div>
+            <div className={`!w-[20%] ${styles.btnTypeDiv} !w-[20%] ${type === 'All' ? styles.btnFilterDivActive : styles.btnFilterDivDefault} `}  onClick={() => setType('All')}>
+              All
             </div>
           </div>
           </div>
-          <div className={`${styles.filterSectionDiv} pb-8 lg:pb-[1.56rem]`}>
-          <h3 className={`${styles.filterSectionDivHeader}`}>Bedroom</h3>
-          <div className={`${styles.radioDiv}`} >
-            <div className={`${styles.FilterRadioBtn}`}></div>
-            <h5>1 Bedroom</h5>
-          </div>
-          <div className={`${styles.radioDiv}`} >
-            <div className={`${styles.FilterRadioBtn}`}></div>
-            <h5>2 Bedroom</h5>
-          </div>
-          <div className={`${styles.radioDiv}`} >
-            <div className={`${styles.FilterRadioBtn}`}></div>
-            <h5>3 Bedroom</h5>
-          </div>
-          </div>
+          { type === 'All' || type === 'Apartment' ?   <BedroomsFilter /> : <></> }
+          { type === 'All' || type === 'Hostel' ? <RoomsFiliter /> : <></> }
           <button className='btnPrimary mt-8 w-full h-12 rounded-lg '>Continue</button>
         </div>
       </div>  

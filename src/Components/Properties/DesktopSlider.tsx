@@ -1,15 +1,19 @@
 import React, { useState } from 'react'
 import ArrowControls from './ArrowControls'
-import Demo2 from '../../../public/images/properties/model2.jpg'
-import Demo3 from '../../../public/images/properties/model3.jpg'
 import ResponsiveImage from '../Utility/ResponsiveImage'
 import styles from './properties.module.css'
+import { StaticImageData } from 'next/image'
 
-const DesktopSlider = () => {
+interface props {
+  images: string[] | StaticImageData[]
+}
+
+const DesktopSlider = ({ images }: props) => {
  const [index, setIndex] = useState(0)
- const images = [Demo3, Demo2, Demo3, Demo2]
+ 
 
  const slidingImages = images.map((each) => {
+  // const url = URL.createObjectURL(each)
   return <ResponsiveImage 
           url={each}
           alt='slidingImages'

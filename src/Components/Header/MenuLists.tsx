@@ -16,16 +16,9 @@ const MenuLists = () => {
  const {isOpen, toggleMenu }= useStore()
  const windowWidth = usestore((state) => state.windowWidth)
 
- function toApartmentsPage(){
-  // detecting window width
-  if(windowWidth >= 1024){
-    // just navigate to properties page
-    router.push('/properties')
-  }else{
-    // close toggle menu
+ function closeMobileMenu(){
+  if(windowWidth < 1024){
     toggleMenu()
-    //then navigate to properties page
-    router.push('/properties')
   }
  }
 
@@ -65,28 +58,15 @@ const MenuLists = () => {
   }
  }
 
- function toAddaPropertyPage(){
-  // detecting window width
-  if(windowWidth >= 1024){
-    // just navigate to properties page
-    router.push('/addaproperty')
-  }else{
-    // close toggle menu
-    toggleMenu()
-    //then navigate to properties page
-    router.push('/addaproperty')
-  }
- }
-
   return (
    <div className={`absolute border-b-2 border-b-primaryBorder lg:border-b-0 lg:static  lg:bg-transparent left-0 bg-bgPrimary w-full h-fit top-[52px] lg:w-fit  font-jhengHei ${isOpen ? 'block' : 'hidden lg:block'} lg:block z-50 lg:z-[2]`}>
     <ul className='w-[86%] mx-auto pt-3 lg:py-0 lg:w-fit lg:flex lg:mx-0 lg:gap-x-5 xl:gap-x-11 '>
      <li className={`lg:!hidden ${styles.li}`}><Link href='/login' className=''>Login</Link></li>
-     <li className={`${styles.li} `} onClick={toAddaPropertyPage}>
-        Add A Property   
+     <li className={`${styles.li} `} onClick={closeMobileMenu}>
+        <Link href='/manageproperties'>Add A Property </Link>  
      </li>
-     <li className={`${styles.li}`} onClick={toApartmentsPage} >
-       Our Apartments
+     <li className={`${styles.li}`} onClick={closeMobileMenu} >
+      <Link href='/properties' >Our Apartments</Link>
      </li>
      <li className={`!border-b-0 !mb-0 ${styles.li}`} onClick={ScrollToHowToUseCribHive} >How to use Cribhive</li>
     </ul>
