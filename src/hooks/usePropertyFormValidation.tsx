@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { z, ZodError } from "zod";
+import {  z, ZodError } from "zod";
 
 const schema = z.object({
   address: z.string().min(20, "Address must be at least 20 characters"),
@@ -7,8 +7,8 @@ const schema = z.object({
   rent: z.string().min(1, "Rent is required"),
   bedrooms: z.string().min(1, "Bedrooms is required"),
   description: z.string().min(20, "Description must be at least 20 characters"),
-  image: z.array(z.instanceof(File)).min(4, "At least 4 images required"),
-  video: z.instanceof(File)
+  image: z.array(z.string()).min(4, "At least 4 images required"),
+  video: z.string().min(1, 'video is required')
 });
 
 type FormData = {
@@ -17,8 +17,8 @@ type FormData = {
   rent: string;
   bedrooms: string;
   description: string;
-  image: File[];
-  video: File;
+  image: string[];
+  video: string;
 };
 
 type FieldErrors = Partial<Record<keyof FormData, string>>;

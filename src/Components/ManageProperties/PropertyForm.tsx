@@ -168,15 +168,18 @@ const handleFormSubmit = async (event: React.FormEvent) => {
   if(selectedCity?.name){
     setField(selectedCity?.name, cityname as keyof FormState)
   }
-  
+  const imagesUrl = images.map((each) => {
+    return URL.createObjectURL(each)
+  })
+  const vidURL = video ? URL.createObjectURL(video) : ''
   const completeFormData:any = {
         address: address,
         rent: rent,
         description: description,
         bedrooms: bedrooms,
         city: selectedCity?.name,
-        image: images,
-        video: video,
+        image: imagesUrl,
+        video: vidURL,
   }
 
   await handleSubmit(completeFormData, () => {
