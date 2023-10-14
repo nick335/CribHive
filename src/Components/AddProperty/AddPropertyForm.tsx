@@ -186,15 +186,13 @@ function handleVideoSelection(e: React.ChangeEvent<HTMLInputElement>){
         <FontAwesomeIcon icon={faPlus} />
       </div>
       {/* image Preview */}
-      {selectedImages.length > 0 &&  <PicturesReview images={selectedImages}  cancel={deleteSelectedImage} /> }
       <div className={`w-full flex justify-between px-4 h-12 bg-transparent border border-black cursor-pointer items-center rounded-lg ${styles.inputGap}`} onClick={toggleVidNotification} >
         <input type='file' className='hidden' ref={vidRef} onChange={handleVideoSelection} onBeforeInput={toggleVidNotification}/>
         <p>Videos</p>
         <FontAwesomeIcon icon={faPlus} />
       </div>
       {/* vid previw */}
-      { selectedVid && <VideoReview vid={selectedVid} /> }
-      <button className={`btnPrimary mt-8 ${styles.formBtn}`}>Preview</button>
+        <button className={`btnPrimary mt-8 ${styles.formBtn}`}>Preview</button>
      </form>
      <PictureNotificattion display={displayNotification.picture} gotIt={gotIt} />
      <VideoNotification display={displayNotification.video} gotIt={gotIt}  />
