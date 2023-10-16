@@ -1,5 +1,6 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { ToWords } from 'to-words'
+import VideoModal from '../Utility/videomodal/VideoModal'
 
 interface props {
  address: string,
@@ -7,9 +8,18 @@ interface props {
  bedrooms: string,
  isApartment: boolean,
  description: string,
+ video?: File
 }
 
-const PropertyPreviewContent = ({address, rent, bedrooms, isApartment, description}: props) => {
+const PropertyPreviewContent = ({address, rent, bedrooms, isApartment, description, video }: props) => {
+  const [watchVideo, setWatchVideo] = useState(false)
+
+  function OpenVideoModal(){
+    setWatchVideo(true)
+  }
+  function CloseVideoModal(){
+    setWatchVideo(false)
+  }
  const converter = new ToWords({
   localeCode: 'en-US'
  })
@@ -24,11 +34,12 @@ const rentword = converter.convert(parseInt(rent))
     <p className='mt-1 lg:mt-2 xl:mt-4 lg:text-lg text-headerPrimary'>{description}</p>
    </div>
    <div className='lg:w-1/2'>
-    <h3 className='font-inter cursor-pointer lg:w-fit lg:ml-auto px-3 py-[0.4rem] text-xs border border-secondaryBorder rounded-[0.25rem] absolute top-3 right-[5%] lg:static '>Watch Video</h3>
+    <h3 className='font-inter cursor-pointer lg:w-fit lg:ml-auto px-3 py-[0.4rem] text-xs border border-secondaryBorder rounded-[0.25rem] absolute top-3 right-[5%] lg:static' onClick={OpenVideoModal}>Watch Video</h3>
     <div className='mt-8 w-full lg:w-[90%] lg:ml-auto lg:h-[10rem] xl:h-[1.75rem] lg:bg-bgPrimary lg:shadow-contactShadow lg:flex lg:items-center lg:justify-center'>
      <button className='w-full h-12 rounded-lg font-jhengHei font-bold bg-btnPrimary text-textSecondary ease-in duration-100 transition-all hover:bg-btnhover hover:text-headerPrimary lg:w-[80%] cursor-pointer'>POST</button>
     </div>
    </div>
+   {watchVideo && <VideoModal vid={video} close={CloseVideoModal} />}
   </div>
   )
 }

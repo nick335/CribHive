@@ -1,7 +1,9 @@
-import React from 'react'
+'use client'
+import React, { useState } from 'react'
 import ContactUs from './ContactUs'
 // import writtenNumber from "written-number";
 import { ToWords } from 'to-words'
+import VideoModal from '../Utility/videomodal/VideoModal'
 
 interface props {
   address: string,
@@ -9,9 +11,18 @@ interface props {
   bedrooms: string,
   isApartment: boolean,
   description: string,
+  vidURL: string
 }
 
-const DescriptionContent = ({address, rent, bedrooms, isApartment, description}: props) => {
+const DescriptionContent = ({address, rent, bedrooms, isApartment, description, vidURL }: props) => {
+  const [watchVideo, setWatchVideo] = useState(false)
+
+  function OpenVideoModal(){
+    setWatchVideo(true)
+  }
+  function CloseVideoModal(){
+    setWatchVideo(false)
+  }
   const converter = new ToWords({
     localeCode: 'en-US'
   })
@@ -26,9 +37,10 @@ const DescriptionContent = ({address, rent, bedrooms, isApartment, description}:
       <p className='mt-1 lg:mt-2 xl:mt-4 lg:text-lg text-headerPrimary'>{description}</p>
      </div>
      <div className='lg:w-1/2'>
-      <h3 className='font-inter cursor-pointer lg:w-fit lg:ml-auto px-3 py-[0.4rem] text-xs border border-secondaryBorder rounded-[0.25rem] absolute top-3 right-[5%] lg:static '>Watch Video</h3>
+      <h3 className='font-inter cursor-pointer lg:w-fit lg:ml-auto px-3 py-[0.4rem] text-xs border border-secondaryBorder rounded-[0.25rem] absolute top-3 right-[5%] lg:static' onClick={OpenVideoModal}>Watch Video</h3>
       <ContactUs />
      </div>
+     {watchVideo && <VideoModal vid={vidURL} close={CloseVideoModal} />}
     </div>
   )
 }

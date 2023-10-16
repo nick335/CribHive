@@ -4,17 +4,18 @@ import DescriptionContent from './DescriptionContent'
 import LocationOnMap from './LocationOnMap'
 import { StaticImageData } from 'next/image'
 
+
 interface propertiesProps{
   images: string[] | StaticImageData[],
   address: string,
   rent: string,
   bedrooms: string,
   isApartment: boolean,
-  // vid: File,
+  vidURL: string,
   description: string,
 }
 
-const PropertiesDescription = ({images, address, rent, bedrooms, isApartment, description }: propertiesProps) => {
+const PropertiesDescription = ({images, address, rent, bedrooms, isApartment, description, vidURL }: propertiesProps) => {
   return (
     <div className='relative'>
      <DescriptionImage images ={images} />
@@ -24,6 +25,7 @@ const PropertiesDescription = ({images, address, rent, bedrooms, isApartment, de
         isApartment={isApartment}
         address={address}
         bedrooms={bedrooms}
+        vidURL={vidURL}
      />
      <LocationOnMap />
     </div>

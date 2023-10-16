@@ -4,11 +4,12 @@ import { useFormStore } from '@/store/usePropertyFormStore'
 import PropertyPreviewContent from './PropertyPreviewContent'
 
 const PropertyPreview = () => {
- const { images, rent, isApartment, address, bedrooms, description} = useFormStore()
+ const { images, rent, isApartment, address, bedrooms, description, video} = useFormStore()
 
  const imagesUrl = images.map((each) => {
   return URL.createObjectURL(each)
  }) 
+ 
   return (
     <div className='relative'>
      <DescriptionImage images={imagesUrl} />
@@ -18,6 +19,7 @@ const PropertyPreview = () => {
         address={address}
         bedrooms={bedrooms}
         description={description}
+        video={video}
      />
     </div>
   )

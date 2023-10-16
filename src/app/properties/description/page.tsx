@@ -3,6 +3,7 @@ import PropertiesDescription from '@/Components/Properties/PropertiesDescription
 import Demo2 from '../../../../public/images/properties/model2.jpg'
 import Demo3 from '../../../../public/images/properties/model3.jpg'
 
+
 const page = () => {
   const images = [Demo3, Demo2, Demo3, Demo2]
   const rent = '100000'
@@ -10,6 +11,7 @@ const page = () => {
   const isApartment= false
   const bedrooms = '3'
   const address = 'Kolawole Street, off Seven avenue Akoka'
+  const vidUrl = '../../../../public/video/CountriesApp.mp4'
 
   return (
     <main className='mt-2'>
@@ -20,6 +22,7 @@ const page = () => {
         isApartment={isApartment}
         address={address}
         bedrooms={bedrooms}
+        vidURL={vidUrl}
       />
     </main>
  )  
